@@ -1,8 +1,9 @@
 class Pessoa:
+    # Atributo de classe
+    olhos = 2
     def __init__(self, *filhos,nome=None, idade=31):
         self.idade = idade
         self.nome = nome
-
         # Atributo Complexo
         self.filhos = list(filhos)
 
@@ -28,5 +29,14 @@ if __name__ == '__main__':
     del isael.filhos
 
     # Os atributos de instância ficam presente no atributo especial __dict__
+
+    Pessoa.olhos = 3
+    isael.olhos = 1
+
     print(isael.__dict__)
     print(caio.__dict__)
+    print(id(Pessoa.olhos))
+    print(id(isael.olhos))
+    print(id(caio.olhos))
+    del isael.olhos
+    print(isael.__dict__)
