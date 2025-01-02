@@ -1,6 +1,7 @@
 class Pessoa:
     # Atributo de classe
     olhos = 2
+
     def __init__(self, *filhos,nome=None, idade=31):
         self.idade = idade
         self.nome = nome
@@ -10,6 +11,16 @@ class Pessoa:
 
     def cumprimentar(self):
         return f"Olá! {id(self)}"
+
+
+    # Metodo de classe
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atrubuto_de_classe(cls):
+        return f"{cls}: olhos {cls.olhos}"
 
 
 if __name__ == '__main__':
@@ -40,3 +51,6 @@ if __name__ == '__main__':
     print(id(caio.olhos))
     del isael.olhos
     print(isael.__dict__)
+    print(isael.metodo_estatico(), isael.metodo_estatico())
+    print(caio.nome_e_atrubuto_de_classe())
+    print(isael.nome_e_atrubuto_de_classe())
