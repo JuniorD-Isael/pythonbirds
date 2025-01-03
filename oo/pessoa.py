@@ -22,9 +22,11 @@ class Pessoa:
     def nome_e_atrubuto_de_classe(cls):
         return f"{cls}: olhos {cls.olhos}"
 
+class Homem(Pessoa):
+    pass
 
 if __name__ == '__main__':
-    caio = Pessoa(nome="Caio")
+    caio = Homem(nome="Caio")
     isael = Pessoa(caio,nome="Isael")
     print(Pessoa.cumprimentar(isael))
     print(id(isael))
@@ -54,3 +56,9 @@ if __name__ == '__main__':
     print(isael.metodo_estatico(), isael.metodo_estatico())
     print(caio.nome_e_atrubuto_de_classe())
     print(isael.nome_e_atrubuto_de_classe())
+    new_pessoa = Pessoa("Anonimo")
+    print(isinstance(new_pessoa, Pessoa))
+    print(isinstance(new_pessoa, Homem))
+
+    print(isinstance(caio, Pessoa))
+    print(isinstance(caio, Homem))
