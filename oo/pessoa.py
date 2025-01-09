@@ -10,7 +10,7 @@ class Pessoa:
 
 
     def cumprimentar(self):
-        return f"Olá! {id(self)}"
+        return f"Olá! {self.nome}"
 
 
     # Metodo de classe
@@ -23,7 +23,9 @@ class Pessoa:
         return f"{cls}: olhos {cls.olhos}"
 
 class Homem(Pessoa):
-    pass
+    def cumprimentar(self):
+        cumprimentar_cls_pai = super().cumprimentar()
+        return f"{cumprimentar_cls_pai} Aperto de mão"
 
 class Mutante(Pessoa):
     olhos = 3
@@ -65,3 +67,4 @@ if __name__ == '__main__':
     print(isinstance(caio, Pessoa))
     print(isinstance(caio, Homem))
     print(caio.olhos)
+    print(isael.cumprimentar())
