@@ -25,9 +25,12 @@ class Pessoa:
 class Homem(Pessoa):
     pass
 
+class Mutante(Pessoa):
+    olhos = 3
+
 if __name__ == '__main__':
-    caio = Homem(nome="Caio")
-    isael = Pessoa(caio,nome="Isael")
+    caio = Mutante(nome="Caio")
+    isael = Homem(caio,nome="Isael")
     print(Pessoa.cumprimentar(isael))
     print(id(isael))
     print(isael.cumprimentar())
@@ -43,7 +46,6 @@ if __name__ == '__main__':
 
     # Os atributos de instância ficam presente no atributo especial __dict__
 
-    Pessoa.olhos = 3
     isael.olhos = 1
 
     print(isael.__dict__)
@@ -62,3 +64,4 @@ if __name__ == '__main__':
 
     print(isinstance(caio, Pessoa))
     print(isinstance(caio, Homem))
+    print(caio.olhos)
